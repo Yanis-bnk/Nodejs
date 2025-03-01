@@ -9,9 +9,7 @@ app.get("/HI",(req,res)=>{
 app.get("/test",(req,res)=>{
     res.send('tu es dans test')
 })
-app.post("/postt",(req,res)=>{
-    res.send('tu es dans post')
-})
+
 app.get("/get", (req, res) => {
     let number = "";
     for (let i = 0; i <= 100; i++) {  
@@ -23,5 +21,9 @@ app.listen(3000,()=>{
     console.log('tu travaille sur le port 3000')
 })
     app.get("/Api/:number1/:number2",(req,res)=>{
-        res.send('tu es dans post')
+        const Num1 = req.params.number1;
+        const Num2 = req.params.number2;
+        const totale= Number(Num1) +Number(Num2) ;
+    
+        res.send(` ${totale}`);
     })
