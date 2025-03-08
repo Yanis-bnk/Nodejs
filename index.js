@@ -4,6 +4,11 @@ app.use(express.json());
 app.get("/helloword",(req,res)=>{
     res.send('hello yanis beniken')
 })
+app
+.use(favicon(__dirname + '/favicon.ico'))
+.use(bodyParser.json())
+.use(cors())
+
 app.get("/HI",(req,res)=>{
     res.send('tu es dans hi')
 })
